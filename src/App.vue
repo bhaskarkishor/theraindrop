@@ -1,54 +1,36 @@
 <template>
-  <v-app>
-    <v-app-bar color="primary" dense dark sticky app>
-      <v-toolbar-title>The Rain Drop</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn text v-if="loggedin" @click="logout">Log Out</v-btn>
-    </v-app-bar>
-
-    <v-content class="d-flex flex-direction-row align-content-center">
-      <diary v-if="loggedin"/>
-      <login v-else/>
-    </v-content>
-  </v-app>
+  <div class="container d-flex flex-column justify-content-center">
+     <div class="card pt-5 pb-5">
+       <div class="text-center mx-5 px-5">
+          <a href="https://theraindrop.web.app">Go to diary</a>
+       </div>
+     </div>
+  </div>
 </template>
 
 <script>
-import login from './components/login.vue'
-import diary from './components/diary.vue'
-import {firebase} from './firebase.js'
+
 
 export default {
   name: 'App',
 
   components: {
-    login,
-    diary
+    
   },
 
   data: () => ({
-    loggedin:false,
+    
   }),
-  mounted:function(){
-      firebase.auth().onAuthStateChanged(
-        function(user){
-          if(user){
-            console.log(user);
-            this.loggedin = !this.loggedin;
-          }
-        }.bind(this)
-      );
-    },
-    methods:{
-      logout:function(){
-        firebase.auth().signOut().then(function(){
-          this.loggedin = !this.loggedin;
-        }.bind(this))
-        .catch(function(error){
-          console.log(error);
-          alert(error);
-        })
-      }
-    }
+  
 };
 </script>
+
+<style scoped>
+.container{
+  height:100vh;
+}
+.card{
+  max-width:500px;
+  margin:auto;
+}
+</style>
