@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar color="primary" dense dark sticky>
+    <v-app-bar color="primary" dense dark sticky app>
       <v-toolbar-title>The Rain Drop</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn text v-if="loggedin" @click="logout">Log Out</v-btn>
@@ -16,7 +16,7 @@
 <script>
 import login from './components/login.vue'
 import diary from './components/diary.vue'
-import firebase from './firebase.js'
+import {firebase} from './firebase.js'
 
 export default {
   name: 'App',

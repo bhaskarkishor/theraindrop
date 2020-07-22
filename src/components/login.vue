@@ -56,7 +56,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer />
-                <v-btn color="primary" @click="login && loggingin != loggingin">Login</v-btn>
+                <v-btn color="primary" @click="login">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import firebase from '../firebase.js'
+import {firebase} from '../firebase.js'
 
 export default {
     name:'login',
@@ -75,7 +75,7 @@ export default {
       
     },
     data:()=>({
-      logginin:false,
+      loggingin:false,
       email:"",
       pwd:""
     }),
@@ -86,6 +86,9 @@ export default {
         .catch(function(error){
           console.log(error);
           alert(error);
+        })
+        .then(()=>{
+          console.log('loggedin')
         });
       }
     },
