@@ -53,14 +53,14 @@ export default {
               subscribeManually: false
             },
             ssr: false, // default
-            emulatorPort: 9099,
+            emulatorPort: process.env.NODE_ENV === 'production' ? undefined : 9099,
             emulatorHost: 'http://localhost',
           },
         firestore: {
             memoryOnly: false, // default
             chunkName: process.env.NODE_ENV !== 'production' ? 'firebase-auth' : '[id]', // default
             enablePersistence: false,
-            emulatorPort: 8080,
+            emulatorPort: process.env.NODE_ENV === 'production' ? undefined : 8080 ,
             emulatorHost: 'localhost',
             settings: {
               // Firestore Settings - currently only works in SPA mode
