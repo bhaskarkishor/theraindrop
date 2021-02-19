@@ -1,29 +1,25 @@
 {
   "name": "theraindrop",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "The Online Journal",
+  "main": "index.js",
+  "repository": "git@github.com:bhaskarkishor/theraindrop.git",
+  "author": "bhaskarkishor <bhaskarkishor2301@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "core-js": "^3.6.4",
-    "firebase": "^7.12.0",
-    "moment": "^2.24.0",
-    "register-service-worker": "^1.6.2",
-    "vue": "^2.6.11"
+    "@nuxtjs/firebase": "^7.4.1",
+    "crypto-js": "^4.0.0",
+    "firebase": "^8.2.7",
+    "firebaseui": "^4.7.3",
+    "nuxt": "^2.14.12"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.2.0",
-    "@vue/cli-plugin-eslint": "~4.2.0",
-    "@vue/cli-plugin-pwa": "~4.2.0",
-    "@vue/cli-service": "~4.2.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.1.2",
-    "sass": "^1.19.0",
-    "sass-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "@nuxtjs/vuetify": "^1.11.3"
   }
 }
