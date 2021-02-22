@@ -51,13 +51,13 @@ export const actions = {
 		})
 		.then((docRef)=>{
 			console.log("Doc added",docRef);
-			ctx.commit("ADD_PAGE",{
-				id: content.date,
-				data: {
-					date: content.date,
-					content: content.content
-				}
-			})
+			// ctx.commit("ADD_PAGE",{
+			// 	id: content.date,
+			// 	data: {
+			// 		date: content.date,
+			// 		content: content.content
+			// 	}
+			// })
 		})
 		.catch((error) => {
 		    console.error("Error writing document: ", error);

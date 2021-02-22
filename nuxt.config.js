@@ -1,5 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 export default {
+    head:{
+        title:'Online Journal'
+    },
     target:'static',
     ssr:false,
     modules: ['@nuxtjs/firebase'],
