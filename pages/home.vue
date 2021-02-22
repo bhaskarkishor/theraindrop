@@ -1,19 +1,21 @@
 <template>
-  <v-row>
-    <v-col cols="0" sm="4" class="secondary"></v-col>
-    <v-col class="col-12 col-sm-8 write-window">
-      <v-container>
+ 
+    <div class="write-window">
+      <v-container class="text-right">
+        <v-btn color="primary" float="right" @click="addPage">
+          Save Page
+        </v-btn>
         <v-textarea
           color="black"
           v-model="content"
           :label="label"
           rows="10"
           auto-grow
+          autofocus
+          flat
           placeholder="Write your day here"
         ></v-textarea>
-        <v-btn color="primary" @click="addPage">
-          Save Page
-        </v-btn>
+        
         <v-dialog v-model="modalPassPhrase">
           <v-card>
             <v-card-text>
@@ -34,8 +36,7 @@
         </v-dialog>
 
       </v-container>
-    </v-col>
-  </v-row>
+    </div>
 </template>
 
 <script>
@@ -95,10 +96,5 @@ export default {
 
 <style>
 .write-window{
-  height:100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 </style>

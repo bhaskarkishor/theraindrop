@@ -1,7 +1,12 @@
 import colors from 'vuetify/es5/util/colors'
 export default {
     head:{
-        title:'Online Journal'
+        title:'Online Journal',
+        meta: [
+          { charset: 'utf-8' },
+          { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+          { hid: 'description', name: 'description', content: '' }
+        ]
     },
     target:'static',
     ssr:false,
@@ -36,7 +41,9 @@ export default {
         }
       }
     }, 
-    
+    plugins: [
+      { src: '~/plugins/masonry', ssr: false }
+    ],
     firebase: {
         config: {
             apiKey: "AIzaSyDNQ-k_6i0mSOKe7KuM943fF3VLwDOQe-s",

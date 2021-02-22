@@ -1,7 +1,6 @@
 <template>
-  <v-row>
-    <v-col sm="4" cols="0" class="primary"></v-col>
-    <v-col sm="8" cols="12" class="login-container">
+  
+    <div class="login-container">
 
       <div class="login-window text-center mt-10">
           <p class="text-h2">
@@ -12,8 +11,7 @@
           </p>
           <firebase-auth></firebase-auth>
       </div>
-    </v-col>
-  </v-row>
+    </div>
 </template>
 
 <script>
@@ -35,6 +33,7 @@ export default {
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+    min-width:400px;
 }
 .login-container{
   height:100vh;

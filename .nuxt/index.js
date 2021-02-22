@@ -16,6 +16,7 @@ import { createStore } from './store.js'
 import nuxt_plugin_plugin_d67dee24 from 'nuxt_plugin_plugin_d67dee24' // Source: ./vuetify/plugin.js (mode: 'all')
 import nuxt_plugin_index_54e4ea38 from 'nuxt_plugin_index_54e4ea38' // Source: ./firebase/index.js (mode: 'all')
 import nuxt_plugin_serviceauthinitialize_6fa773e6 from 'nuxt_plugin_serviceauthinitialize_6fa773e6' // Source: ./firebase/service.auth.initialize.js (mode: 'all')
+import nuxt_plugin_masonry_18e5320f from 'nuxt_plugin_masonry_18e5320f' // Source: ../plugins/masonry (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -72,7 +73,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"Online Journal","meta":[],"link":[{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
+    head: {"title":"Online Journal","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
 
     store,
     router,
@@ -211,6 +212,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_serviceauthinitialize_6fa773e6 === 'function') {
     await nuxt_plugin_serviceauthinitialize_6fa773e6(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_masonry_18e5320f === 'function') {
+    await nuxt_plugin_masonry_18e5320f(app.context, inject)
   }
 
   // Lock enablePreview in context
