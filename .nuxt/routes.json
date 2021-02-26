@@ -3,28 +3,24 @@
     "name": "home",
     "path": "/home",
     "component": "/home/bhaskarkishor/firebase/theraindrop/pages/home.vue",
-    "chunkName": "pages/home",
-    "_name": "_dd880bce"
+    "chunkName": "pages/home"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "/home/bhaskarkishor/firebase/theraindrop/pages/login.vue",
-    "chunkName": "pages/login",
-    "_name": "_97afa0c2"
+    "chunkName": "pages/login"
   },
   {
     "name": "pages",
     "path": "/pages",
     "component": "/home/bhaskarkishor/firebase/theraindrop/pages/pages.vue",
-    "chunkName": "pages/pages",
-    "_name": "_505c8a7a"
+    "chunkName": "pages/pages"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/home/bhaskarkishor/firebase/theraindrop/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_2afee6f0"
+    "chunkName": "pages/index"
   }
 ]
